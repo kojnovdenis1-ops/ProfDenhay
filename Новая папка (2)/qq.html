@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DenHay — Личная страница</title>
+    <style>
+        /* Базовый сброс стилей */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        /* Настройка контейнера страницы */
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+            background-color: #0d0d0d; /* Цвет, пока видео загружается */
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        /* Полноэкранное видео на фоне */
+        .video-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover; /* Видео заполняет весь экран без искажений */
+            z-index: -2;
+        }
+
+        /* Легкое затемнение поверх видео, чтобы текст легко читался */
+        .video-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.45);
+            z-index: -1;
+        }
+
+        /* Центральная карточка с эффектом матового стекла */
+        .container {
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 24px;
+            padding: 50px 40px;
+            max-width: 650px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Крупный заголовок по центру */
+        h1 {
+            font-size: 4.5rem;
+            font-weight: 800;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Блок с информацией о себе */
+        .about {
+            font-size: 1.15rem;
+            line-height: 1.6;
+            color: #f0f0f0;
+            margin-bottom: 35px;
+        }
+
+        /* Контейнер для кнопок соцсетей */
+        .socials {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        /* Стили кнопок-ссылок */
+        .social-link {
+            text-decoration: none;
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 12px 26px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        /* Эффект при наведении на кнопку */
+        .social-link:hover {
+            background: #ffffff;
+            color: #1a1a1a;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Адаптация под экраны смартфонов */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 3rem;
+            }
+            .container {
+                padding: 35px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Фоновое видео -->
+    <video class="video-bg" autoplay loop muted playsinline>
+        <source src="fon.mp4" type="video/mp4">
+        Ваш браузер не поддерживает воспроизведение видео.
+    </video>
+
+    <!-- Слой затемнения поверх видео -->
+    <div class="video-overlay"></div>
+
+    <!-- Основной контент -->
+    <div class="container">
+        <h1>DenHay</h1>
+
+        <p class="about">
+хочешь похожий профиль обращайся на прямую
+        </p>
+        <div class="socials">
+            <a href="https://t.me/den_hay" target="_blank" class="social-link">Telegram</a>
+        </div>
+    </div>
+
+</body>
+</html>
